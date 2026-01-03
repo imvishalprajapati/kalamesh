@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { Heart } from "lucide-react";
+import { Share } from "lucide-react";
+import { Eye } from "lucide-react";
 import type { Artwork } from "../../types";
 
 interface ArtworkCardProps {
@@ -25,13 +28,29 @@ export default function ArtworkCard({ artwork }: ArtworkCardProps) {
                     </div>
                 )}
             </div>
-            <div className="mt-2">
-                <h3 className="text-sm font-semibold text-slate-900 line-clamp-1 dark:text-slate-100">
-                    {artwork.title}
-                </h3>
-                <p className="text-xs text-slate-500 line-clamp-1 dark:text-slate-400">
-                    {artwork.tags.slice(0, 3).join(" • ")}
-                </p>
+            <div className="mt-2 flex items-start justify-between gap-2">
+                <div>
+                    <h3 className="text-sm font-semibold text-slate-900 line-clamp-1 dark:text-slate-100">
+                        {artwork.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 line-clamp-1 dark:text-slate-400">
+                        {artwork.tags.slice(0, 3).join(" • ")}
+                    </p>
+                </div>
+                <div className="flex flex-col items-center gap-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+                    <div className="flex items-center gap-1">
+                        <Heart className="h-3 w-3" />
+                        <span>{artwork.likes}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                        <Share className="h-3 w-3" />
+                        <span>{artwork.shares}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                        <Eye className="h-3 w-3" />
+                        <span>{artwork.views}</span>
+                    </div>
+                </div>
             </div>
         </Link>
     );

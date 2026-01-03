@@ -22,6 +22,9 @@ export const MOCK_ARTWORKS: Artwork[] = [
         tools: ["Blender", "Photoshop"],
         createdAt: new Date().toISOString(),
         creator: MOCK_USER,
+        likes: 124,
+        shares: 200,
+        views: 900
     },
     {
         id: "a2",
@@ -35,6 +38,9 @@ export const MOCK_ARTWORKS: Artwork[] = [
         tools: ["After Effects"],
         createdAt: new Date(Date.now() - 86400000).toISOString(),
         creator: MOCK_USER,
+        likes: 89,
+        shares: 200,
+        views: 2100
     },
     {
         id: "a3",
@@ -48,5 +54,8 @@ export const MOCK_ARTWORKS: Artwork[] = [
         tools: ["Maya", "Substance"],
         createdAt: new Date(Date.now() - 172800000).toISOString(),
         creator: MOCK_USER,
+        likes: 45,
+        shares: 200,
+        views: 15000
     },
 ];

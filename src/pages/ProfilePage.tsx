@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import ProfileHeader from "../components/profile/ProfileHeader";
 import PortfolioGrid from "../components/profile/PortfolioGrid";
 import { MOCK_USER, MOCK_ARTWORKS } from "../lib/mock-data";
+import { Select } from "../components/ui/Select";
 
 export default function ProfilePage() {
     const { username } = useParams<{ username: string }>();
@@ -18,12 +19,23 @@ export default function ProfilePage() {
             <ProfileHeader user={user} />
 
             <div className="space-y-6">
-                <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
+                <div className="flex items-center justify-between  bg-gray-900 border-b border-slate-200 dark:border-slate-800 p-2">
                     <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
                         Portfolio
                     </h2>
-                    <div className="text-sm text-slate-500 dark:text-slate-400">
-                        {artworks.length} artworks
+                    <div className="flex items-center gap-6 justify-end">
+                        <div className="focus:outline-none focus:ring-2 focus:ring-red-600">
+                            <Select options={[
+                                { value: "all", label: "All" },
+                                { value: "images", label: "Images" },
+                                { value: "videos", label: "Videos" },
+                                { value: "models", label: "Models" },
+                            ]}>
+                            </Select>
+                        </div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400">
+                            {artworks.length} artworks
+                        </div>
                     </div>
                 </div>
 

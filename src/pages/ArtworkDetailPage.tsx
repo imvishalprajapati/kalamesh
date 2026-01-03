@@ -38,7 +38,7 @@ export default function ArtworkDetailPage() {
                     </Link>
                     <ArtworkViewer artwork={artwork} />
                 </div>
-                <div className="artwork-info lg:col-span-1 space-y-8">
+                <div className="artwork-info lg:col-span-1 space-y-8 bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
                     <div className="space-y-6">
                         <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">
                             {artwork.title}

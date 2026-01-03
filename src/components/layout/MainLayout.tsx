@@ -22,7 +22,9 @@ const MainLayout = () => {
                 </div>
             </header>
             <main className="mx-auto px-4 py-8">
-                <Outlet />
+                <div className="container mx-auto">
+                    <Outlet />
+                </div>
             </main>
         </div>
     );

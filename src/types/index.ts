@@ -10,6 +10,9 @@ export interface Artwork {
     tools: string[];
     createdAt: string;
     creator: User;
+    likes: number;
+    shares: number;
+    views: number;
 }
 
 export interface User {
